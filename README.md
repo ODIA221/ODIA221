@@ -27,7 +27,7 @@ Ingénieur en informatique et doctorant à l'ESP/UCAD, je suis passionné par la
 
 ### 🚀 Compétences techniques
 
-- **Langages** : JavaScript (Node.js, React, Angular, Next.js), PHP (Laravel), Python (Django, FastAPI)
+- **Langages** : JavaScript (Node.js, React, Angular, Next.js), PHP (Laravel, Livewire), Python (Django, FastAPI)
 - **Bases de données** : MySQL, PostgreSQL, MongoDB
 - **DevOps & outils** : Git, GitHub, GitLab, Docker (CI/CD), Postman
 - **IoT** : Arduino, Raspberry Pi
@@ -82,7 +82,7 @@ I'm a software engineer and PhD student at ESP/UCAD, passionate about **technolo
 
 ### 🚀 Technical Skills
 
-- **Languages**: JavaScript (Node.js, React, Angular, Next.js), PHP (Laravel), Python (Django, FastAPI)
+- **Languages**: JavaScript (Node.js, React, Angular, Next.js), PHP (Laravel, Livewire), Python (Django, FastAPI)
 - **Databases**: MySQL, PostgreSQL, MongoDB
 - **DevOps & Tools**: Git, GitHub, GitLab, Docker (CI/CD), Postman
 - **IoT**: Arduino, Raspberry Pi
