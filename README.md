@@ -66,7 +66,7 @@ Ingénieur en informatique et doctorant à l'ESP/UCAD, je suis passionné par la
 
 ### ✨ Citation
 
-> *"Apprendre à coder, c’est apprendre à créer l’avenir." – Anonyme*
+> *"Apprendre à coder, c’est apprendre à créer l’avenir." – ODIA221*
 
 ---
 
@@ -121,7 +121,7 @@ I'm a software engineer and PhD student at ESP/UCAD, passionate about **technolo
 
 ### ✨ Favorite Quote
 
-> *"Learning to code is learning to shape the future." – Anonymous*
+> *"Learning to code is learning to shape the future." – ODIA221*
 
 ---
 
