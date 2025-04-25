@@ -47,7 +47,7 @@ Ingénieur en informatique et doctorant à l'ESP/UCAD, je suis passionné par la
 
 ### 💼 Expériences
 
--  **Responsable TP, TD** – *ESP, UCAD* (2025)
+-  **Responsable cours, TP, TD** – (2025)
 - **Responsable Technologique** – *Wommate Technologie* (2023 – présent)
 - **Développeur Web** – *Sarris Group* (2022 – 2023)
 - **Développeur Freelance** (2019 – 2020)
@@ -102,7 +102,7 @@ I'm a software engineer and PhD student at ESP/UCAD, passionate about **technolo
 
 ### 💼 Professional Experience
 
--  **Responsable TP, TD** – *ESP, UCAD* (2025)
+-  **Responsable cours, TP, TD** – (2025)
 - **Tech Lead** – *Wommate Technologie* (2023 – Present)
 - **Web Developer** – *Sarris Group* (2022 – 2023)
 - **Freelance Developer** (2019 – 2020)
