@@ -130,4 +130,5 @@ I'm a software engineer and PhD student at ESP/UCAD, passionate about **technolo
 <p align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=odia221&show_icons=true&theme=tokyonight" />
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=odia221&theme=tokyonight" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=odia221&layout=compact&theme=tokyonight&hide=html,css" />
 </p>
