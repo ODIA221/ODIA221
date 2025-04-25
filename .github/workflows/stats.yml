@@ -1,37 +1,44 @@
-name: Update GitHub Stats (Including Private)
+name: Mise à jour des Statistiques GitHub
 on:
   schedule:
-    - cron: '0 0 * * *'  # Daily at midnight UTC
-  workflow_dispatch:
+    - cron: '0 12 * * *'  # Exécution quotidienne à midi UTC (plutôt qu'à minuit)
+  workflow_dispatch:       # Permet un déclenchement manuel
   push:
     branches: [ main ]
 
 jobs:
   update-stats:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write      # Permission nécessaire pour pousser les changements
+    
     steps:
-      - name: Checkout repository
+      - name: Checkout du dépôt
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # Récupère tout l'historique pour les comparaisons
 
-      - name: Generate GitHub Stats
+      - name: Générer les statistiques
         uses: anuraghazra/github-readme-stats@main
         with:
           github_token: ${{ secrets.GH_TOKEN }}
           show_icons: true
           locale: fr
           theme: dark
-          count_private: true          # Inclut les repos privés
-          include_all_commits: true     # Tous les commits (même non-main)
-          cache_seconds: 0             # Désactive le cache pour des stats fraîches
+          count_private: true
+          include_all_commits: true
+          cache_seconds: 43200  # Cache de 12h (équilibre entre fraîcheur et performance)
 
-      - name: Commit and push changes
+      - name: Mettre à jour le README
         run: |
+          # Configuration Git
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
-          git add .
-          if [ -n "$(git status --porcelain)" ]; then
-            git commit -m "🔄 Update GitHub stats [skip ci]"
+          
+          # Vérification des modifications
+          git diff --quiet || {
+            git add .
+            git commit -m "📊 Mise à jour des stats GitHub [skip ci]"
             git push
-          else
-            echo "No changes to commit."
-          fi
+            echo "Statistiques mises à jour avec succès!"
+          }
