@@ -130,3 +130,4 @@ I'm a software engineer and PhD student at ESP/UCAD, passionate about **technolo
 ![Stats complètes](https://github-readme-stats.vercel.app/api?username=ODIA221&show_icons=true&theme=dark&count_private=true&include_all_commits=true)
 ![Top Langages](https://github-readme-stats.vercel.app/api/top-langs/?username=ODIA221&layout=compact&theme=dark&count_private=true)
 ![Détails privés](https://github-readme-stats.vercel.app/api/wakatime?username=ODIA221&custom_title=Activité+privée&layout=compact&theme=dark&langs_count=6&count_private=true)
+[![Statistiques WakaTime](https://github-readme-stats.vercel.app/api/wakatime?username=odia221&layout=compact&theme=dark)](https://wakatime.com/@monpseudo)
