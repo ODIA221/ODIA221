@@ -1,32 +1,37 @@
-name: Update GitHub Stats
+name: Update GitHub Stats (Including Private)
 on:
   schedule:
-    - cron: '0 0 * * *'  # Exécution quotidienne à minuit
-  workflow_dispatch:     # Permet un déclenchement manuel
+    - cron: '0 0 * * *'  # Daily at midnight UTC
+  workflow_dispatch:
   push:
-    branches: [ main ]   # Se déclenche aussi quand vous poussez des changements
+    branches: [ main ]
 
 jobs:
   update-stats:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Generate GitHub Stats
         uses: anuraghazra/github-readme-stats@main
         with:
           github_token: ${{ secrets.GH_TOKEN }}
           show_icons: true
-          locale: fr       # Pour avoir les textes en français
-          theme: dark      # Thème sombre
-          cache_seconds: 86400  # Cache de 24h
+          locale: fr
+          theme: dark
+          count_private: true          # Inclut les repos privés
+          include_all_commits: true     # Tous les commits (même non-main)
+          cache_seconds: 0             # Désactive le cache pour des stats fraîches
 
-      - name: Commit and push if stats changed
+      - name: Commit and push changes
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
           git add .
-          if git commit -m "Update GitHub stats [skip ci]"; then
+          if [ -n "$(git status --porcelain)" ]; then
+            git commit -m "🔄 Update GitHub stats [skip ci]"
             git push
+          else
+            echo "No changes to commit."
           fi
