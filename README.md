@@ -127,5 +127,7 @@ I'm a software engineer and PhD student at ESP/UCAD, passionate about **technolo
 
 ### 📈 GitHub Stats
 
-![Stats GitHub](https://github-readme-stats.vercel.app/api?username=ODIA221&show_icons=true&theme=dark&locale=fr)
-![Top Langages](https://github-readme-stats.vercel.app/api/top-langs/?username=ODIA221&layout=compact&theme=dark&locale=fr)
+## Mes Statistiques GitHub (y compris privées)
+
+![Stats GitHub complètes](https://github-readme-stats.vercel.app/api?username=ODIA221&show_icons=true&theme=dark&locale=fr&count_private=true&include_all_commits=true)
+![Top Langages](https://github-readme-stats.vercel.app/api/top-langs/?username=ODIA221&layout=compact&theme=dark&locale=fr&count_private=true)
