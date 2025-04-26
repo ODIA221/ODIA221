@@ -128,6 +128,7 @@ I'm a software engineer and PhD student at ESP/UCAD, passionate about **technolo
 
 ### 📊 📈 GitHub Stats
 
+<!-- STATS_START -->
 ![Statistiques GitHub](https://github-readme-stats.vercel.app/api?username=ODIA221&show_icons=true&theme=dark&count_private=true&include_all_commits=true&hide_title=false)
 ![Top Langages](https://github-readme-stats.vercel.app/api/top-langs/?username=ODIA221&layout=compact&theme=dark&count_private=true&hide_title=false)
 
@@ -135,3 +136,6 @@ I'm a software engineer and PhD student at ESP/UCAD, passionate about **technolo
 
 [![Badge WakaTime](https://wakatime.com/badge/user/ODIA221.svg)](https://wakatime.com/@ODIA221)
 *Les statistiques WakaTime apparaîtront après 24h d'activité enregistrée*
+<!-- STATS_END -->
+
+
