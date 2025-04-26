@@ -23,11 +23,10 @@ jobs:
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
-          git config --global pull.rebase false
 
       - name: Générer les statistiques
         uses: anuraghazra/github-readme-stats@main
-        id: stats
+        id: generate_stats
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           show_icons: true
@@ -39,11 +38,16 @@ jobs:
 
       - name: Mettre à jour le README
         run: |
-          # Ici vous devriez ajouter un script qui:
-          # 1. Récupère les URLs générées par l'action précédente (${{ steps.stats.outputs...}})
-          # 2. Insère ces images dans votre README.md
-          # 3. Vérifie les modifications
+          # Récupérer les URLs des images générées
+          # Note: L'action github-readme-stats ne retourne pas d'outputs par défaut
+          # Nous devons donc les construire manuellement
+          USERNAME="ODIA221"
+          STATS_URL="https://github-readme-stats.vercel.app/api?username=$USERNAME&show_icons=true&locale=fr&theme=dark&count_private=true&include_all_commits=true"
           
+          # Insérer les stats dans le README.md
+          sed -i "s|<!-- STATS_START -->.*<!-- STATS_END -->|<!-- STATS_START -->\n![Statistiques GitHub]($STATS_URL)\n<!-- STATS_END -->|g" README.md
+          
+          # Vérifier et pousser les modifications
           if git diff --quiet README.md; then
             echo "Aucune modification nécessaire"
           else
