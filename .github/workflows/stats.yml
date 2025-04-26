@@ -19,30 +19,33 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Configurer Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.x'
-
-      - name: Installer les dépendances
-        run: pip install requests pyyaml
-
-      - name: Télécharger les stats et mettre à jour le README
-        env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+      - name: Configurer Git
         run: |
-          # Script Python pour générer et insérer les stats
-          python3 << 'EOF'
-          # Votre script Python ici (voir explication ci-dessous)
-          EOF
-
-          # Configuration Git
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
+          git config --global pull.rebase false
+
+      - name: Générer les statistiques
+        uses: anuraghazra/github-readme-stats@main
+        id: stats
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          show_icons: true
+          locale: fr
+          theme: dark
+          count_private: true
+          include_all_commits: true
+          cache_seconds: 43200
+
+      - name: Mettre à jour le README
+        run: |
+          # Ici vous devriez ajouter un script qui:
+          # 1. Récupère les URLs générées par l'action précédente (${{ steps.stats.outputs...}})
+          # 2. Insère ces images dans votre README.md
+          # 3. Vérifie les modifications
           
-          # Commit et push si modifications
-          if git diff --quiet; then
-            echo "Aucune modification détectée"
+          if git diff --quiet README.md; then
+            echo "Aucune modification nécessaire"
           else
             git add README.md
             git commit -m "📊 Mise à jour des stats GitHub [skip ci]"
