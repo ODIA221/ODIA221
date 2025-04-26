@@ -2,8 +2,8 @@ name: Mise à jour des Statistiques GitHub
 
 on:
   schedule:
-    - cron: '0 12 * * *'
-  workflow_dispatch:
+    - cron: '0 12 * * *'  # Tous les jours à midi UTC
+  workflow_dispatch:       # Permet un déclenchement manuel
   push:
     branches: [ main ]
 
@@ -17,20 +17,22 @@ jobs:
       - name: Checkout du dépôt
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          fetch-depth: 0   # Nécessaire pour git diff
 
       - name: Configurer Git
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
 
-      - name: Mettre à jour les stats dans README
+      - name: Générer et mettre à jour les stats
+        env:
+          GH_PAT: ${{ secrets.PERSONAL_ACCESS_TOKEN }}  # À créer dans les secrets du repo
         run: |
-          # Générer les URLs des images
+          # 1. Générer les URLs des images
           STATS_URL="https://github-readme-stats.vercel.app/api?username=ODIA221&show_icons=true&locale=fr&theme=dark&count_private=true&include_all_commits=true"
           LANG_URL="https://github-readme-stats.vercel.app/api/top-langs/?username=ODIA221&layout=compact&theme=dark&count_private=true"
 
-          # Mettre à jour le README.md
+          # 2. Mettre à jour le README.md
           sed -i '/<!-- STATS_START -->/,/<!-- STATS_END -->/{
               /<!-- STATS_START -->/{
                   a\
@@ -39,11 +41,11 @@ jobs:
               /<!-- STATS_END -->/!d
           }' README.md
 
-          # Vérifier et pousser les modifications
+          # 3. Pousser les changements si nécessaire
           if git diff --quiet README.md; then
-            echo "Aucune modification nécessaire"
+            echo "Aucune modification détectée"
           else
             git add README.md
-            git commit -m "📊 Mise à jour des stats GitHub [skip ci]"
-            git push
+            git commit -m "📊 Mise à jour automatique des stats [skip ci]"
+            git push "https://$GH_PAT@github.com/ODIA221/ODIA221.git"
           fi
