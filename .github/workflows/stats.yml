@@ -24,29 +24,21 @@ jobs:
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
 
-      - name: Générer les statistiques
-        uses: anuraghazra/github-readme-stats@main
-        id: generate_stats
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          show_icons: true
-          locale: fr
-          theme: dark
-          count_private: true
-          include_all_commits: true
-          cache_seconds: 43200
-
-      - name: Mettre à jour le README
+      - name: Mettre à jour les stats dans README
         run: |
-          # Récupérer les URLs des images générées
-          # Note: L'action github-readme-stats ne retourne pas d'outputs par défaut
-          # Nous devons donc les construire manuellement
-          USERNAME="ODIA221"
-          STATS_URL="https://github-readme-stats.vercel.app/api?username=$USERNAME&show_icons=true&locale=fr&theme=dark&count_private=true&include_all_commits=true"
-          
-          # Insérer les stats dans le README.md
-          sed -i "s|<!-- STATS_START -->.*<!-- STATS_END -->|<!-- STATS_START -->\n![Statistiques GitHub]($STATS_URL)\n<!-- STATS_END -->|g" README.md
-          
+          # Générer les URLs des images
+          STATS_URL="https://github-readme-stats.vercel.app/api?username=ODIA221&show_icons=true&locale=fr&theme=dark&count_private=true&include_all_commits=true"
+          LANG_URL="https://github-readme-stats.vercel.app/api/top-langs/?username=ODIA221&layout=compact&theme=dark&count_private=true"
+
+          # Mettre à jour le README.md
+          sed -i '/<!-- STATS_START -->/,/<!-- STATS_END -->/{
+              /<!-- STATS_START -->/{
+                  a\
+![Statistiques GitHub]('"$STATS_URL"')\n![Top Langages]('"$LANG_URL"')
+              }
+              /<!-- STATS_END -->/!d
+          }' README.md
+
           # Vérifier et pousser les modifications
           if git diff --quiet README.md; then
             echo "Aucune modification nécessaire"
