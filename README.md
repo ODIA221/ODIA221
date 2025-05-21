@@ -2,7 +2,13 @@
 <h3 align="center">Ingénieur informatique | Doctorant chercheur | Développeur full-stack & Formateur</h3>
 
 <p align="center">
-  <a href="https://www.linkedin.com/in/oumar-diagne-95484620a/" target="_blank">
+  <a href="https://bit.ly/4dufJld" target="_blank">
+    <img src="https://img.shields.io/badge/-ResearchGate-00CCBB?style=flat&logo=researchgate&logoColor=white" />
+  </a>
+  <a href="http://bit.ly/439ukiw" target="_blank">
+    <img src="https://img.shields.io/badge/Google%20Scholar-4285F4?style=flat&logo=google-scholar&logoColor=white&labelColor=4285F4&color=white" alt="Google Scholar"/>
+  </a>
+  <a href="https://bit.ly/456aKFt" target="_blank">
     <img src="https://img.shields.io/badge/-LinkedIn-blue?style=flat&logo=linkedin" />
   </a>
   <a href="http://wommate.tech/" target="_blank">
