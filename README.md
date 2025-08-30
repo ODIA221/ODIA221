@@ -11,9 +11,9 @@
   <a href="https://bit.ly/456aKFt" target="_blank">
     <img src="https://img.shields.io/badge/-LinkedIn-blue?style=flat&logo=linkedin" />
   </a>
-  <a href="http://wommate.tech/" target="_blank">
+<!--   <a href="http://wommate.tech/" target="_blank">
     <img src="https://img.shields.io/badge/-Wommate-ff69b4?style=flat&logo=google-chrome&logoColor=white" />
-  </a>
+  </a> -->
   <a href="mailto:diagneoumarfk@gmail.com">
     <img src="https://img.shields.io/badge/-Email-D14836?style=flat&logo=gmail&logoColor=white" />
   </a>
@@ -55,7 +55,7 @@ Ingénieur en informatique et doctorant à l'ESP/UCAD, je suis passionné par la
 
 - Ingénieur informatique chez Sen PNA - (2025)
 -  **Responsable cours, TP, TD** – (2025)
-- **Responsable Technologique** – *Wommate Technologie* (2023 – présent)
+- **Responsable Technologique** – *Wommate Technologie* (2022 – 2024)
 - **Développeur Web** – *Sarris Group* (2022 – 2023)
 - **Développeur Freelance** (2019 – 2020)
 
@@ -111,7 +111,7 @@ I'm a software engineer and PhD student at ESP/UCAD, passionate about **technolo
 
 -  Software engineering from Sen PNA - (2025)
 -  **Responsable cours, TP, TD** – (2025)
-- **Tech Lead** – *Wommate Technologie* (2023 – Present)
+- **Tech Lead** – *Wommate Technologie* (2022 – 2024)
 - **Web Developer** – *Sarris Group* (2022 – 2023)
 - **Freelance Developer** (2019 – 2020)
 
